@@ -1,0 +1,3 @@
+%{
+  "exmagick": {:hex, :exmagick, "0.0.5", "4c8fa65ef1af38fad937672d9dce2f56525bfbc9ead58d52aebb79ba290b6466", [:mix], [], "hexpm", "a15d4055d0d40818cdc76fd9182e49fe5ef5e75304d752263027a080e8b2524d"},
+}
