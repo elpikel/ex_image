@@ -9,7 +9,11 @@ defmodule ExImageTest do
 
       {:ok, thumbnail} = ExImage.thumbnail(image, %ImageSize{width: 400, height: 400})
 
-      assert thumbnail
+      with {:ok, handler} <- ExMagick.init(),
+           {:ok, loaded_image} <- ExMagick.image_load(handler, {:blob, thumbnail}),
+           {:ok, image_size} <- ExMagick.size(loaded_image) do
+        assert image_size == %{width: 400, height: 266}
+      end
     end
 
     test "returns error for incorrect file" do

@@ -21,6 +21,7 @@ defmodule ExImage.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps() do
     [
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:exmagick, "~> 0.0.5"}
     ]
   end
